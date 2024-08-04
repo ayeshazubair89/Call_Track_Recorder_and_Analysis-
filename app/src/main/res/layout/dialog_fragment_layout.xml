@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/dark_purple"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:text="Filter"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/bt_close"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            app:srcCompat="@drawable/baseline_cancel" />
+    </LinearLayout>
+
+    <!-- Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:scrollingCache="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <!-- Filter by Call Type -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filter by Call Type"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/dark_purple"
+                    android:layout_gravity="center|start"
+                    android:padding="10dp" />
+
+             <!--   <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp">-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- All Calls Button -->
+                        <Button
+                            android:id="@+id/bt_all_calls"
+                            android:layout_width="75dp"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="2dp"
+                            android:paddingEnd="2dp"
+                            android:text="All Calls"
+                            android:textSize="10sp"
+                            android:textColor="@android:color/white"
+                           />
+
+                        <!-- Incoming Calls Button -->
+                        <Button
+                            android:id="@+id/bt_incoming_calls"
+                            android:layout_width="75dp"
+                            android:layout_height="wrap_content"
+                            android:text="Incoming"
+                            android:textSize="10sp"
+                            android:paddingStart="2dp"
+                            android:paddingEnd="2dp"
+                            android:layout_marginStart="2dp"
+                            android:textColor="@android:color/white"
+                            />
+
+
+
+                        <!-- Outgoing Calls Button -->
+                        <Button
+                            android:id="@+id/bt_outgoing_calls"
+                            android:layout_width="75dp"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="2dp"
+                            android:paddingEnd="2dp"
+                            android:layout_marginStart="2dp"
+                            android:text="Outgoing"
+                            android:textSize="11sp"
+                            android:textColor="@android:color/white"
+                            />
+
+                        <!-- Missed Calls Button -->
+                        <Button
+                            android:id="@+id/bt_missed_calls"
+                            android:layout_width="75dp"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="2dp"
+                            android:paddingEnd="2dp"
+                            android:layout_marginStart="2dp"
+                            android:text="Missed"
+                            android:textSize="11sp"
+                            android:textColor="@android:color/white"
+                           />
+                    </LinearLayout>
+              <!--  </HorizontalScrollView>-->
+            </LinearLayout>
+
+            <!-- Sort By -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sort By"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center|start"
+                    android:paddingTop="10dp" />
+
+                <!-- Spinner -->
+                <Spinner
+                    android:id="@+id/sort_by_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <!-- Date Range -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Date Range"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center|start"
+                    android:paddingTop="10dp" />
+
+                <!-- Start and End Date -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Start Date -->
+                    <EditText
+                        android:id="@+id/start_date_edit_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:hint="Start Date"
+                        android:text="2022-11-01"
+                        android:textColor="#737272"
+                        android:textSize="14sp"
+                        android:padding="5dp"                        android:background="@drawable/unique_edit_text_bg"
+
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <!-- End Date -->
+                    <EditText
+                        android:id="@+id/end_date_edit_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:textSize="14sp"
+                        android:background="@drawable/unique_edit_text_bg"
+                        android:hint="End Date"
+                        android:text="3040-11-01"
+
+                        android:textColor="#737272"
+                        android:inputType="date"
+                        android:padding="5dp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Filter by Time -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filter by Time"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center|start"
+                    android:paddingTop="10dp" />
+
+                <!-- Start and End Time -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Start Time -->
+                    <EditText
+                        android:id="@+id/time_start_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:textSize="14sp"
+                        android:background="@drawable/unique_edit_text_bg"
+                        android:hint="Start Time"
+                        android:inputType="number"
+                        android:padding="5dp"
+                        android:text="00:00"
+                        android:textColor="#737272"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <!-- End Time -->
+                    <EditText
+                        android:id="@+id/time_end_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:textSize="14sp"
+                        android:background="@drawable/unique_edit_text_bg"
+                        android:hint="End Time"
+                        android:text="11:59"
+                        android:textColor="#737272"
+                        android:inputType="number"
+                        android:padding="5dp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Duration Filter -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filter by Duration (seconds)"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center|start"
+                    android:paddingTop="10dp" />
+
+                <!-- Min and Max Duration -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Min Duration -->
+                    <EditText
+                        android:id="@+id/min_duration_edit_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/unique_edit_text_bg"
+                        android:padding="5dp"
+android:text="00:00:00"
+                        android:textColor="#737272"
+                        android:textSize="14sp"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    <!-- Max Duration -->
+                    <EditText
+                        android:id="@+id/max_duration_edit_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:textColor="#737272"
+                        android:background="@drawable/unique_edit_text_bg"
+                        android:text="23:59:00"
+
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Submit"
+                android:textColor="@android:color/white"
+                android:background="@color/black"
+                android:elevation="5dp"
+                android:layout_margin="16dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

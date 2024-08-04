@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/unique_button_bg.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/unique_button_background_color" /> <!-- Set your desired background color here -->
+    <corners android:radius="8dp" /> <!-- Adjust the radius to control the corner roundness -->
+</shape>

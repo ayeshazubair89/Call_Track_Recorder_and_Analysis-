@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#6aa786</color>
+    <color name="red">#dd4f8b</color>
+    <color name="yellow">#fff778</color>
+    <color name="blue">#32c4d3</color>
+
+    <color name="gray">#FCEFBF7E</color>
+    <color name="default_call_type_color">#000000</color>
+    <color name="missed_call_color">#E8BFBF</color>
+    <color name="incoming_call_color">#9C27B0</color>
+    <color name="outgoing_call_color">#91BB91</color>
+    <color name="default_background_color">#CCCCCC</color>
+    <color name="colorA">#FF0000</color>
+    <color name="colorB">#1976D2</color>
+    <color name="purple">#674fa3</color>
+    <color name="dark_purple">#566886</color>
+    <color name="light_purple">#f6f6fe</color>
+    <color name="dim_purple">#f2ecf6</color>
+    <!-- res/values/colors.xml -->
+    <color name="unique_button_background_color">#FF5722</color>
+    <!-- res/values/colors.xml -->
+    <color name="unique_edit_text_background_color">#FFFFFF</color>
+    <color name="unique_edit_text_border_color">#CCCCCC</color>
+
+    <!-- Add more colors for other letters if needed -->
+
+   <!-- <integer-array name="initial_background_colors">
+        <item>@android:color/holo_red_light</item>
+        <item>@android:color/holo_green_light</item>
+        <item>@android:color/holo_blue_light</item>
+        &lt;!&ndash; Add more colors as needed &ndash;&gt;
+    </integer-array>-->
+ <!--   <color name="red">#F44336</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="blue">#00BCD4</color>
+    &lt;!&ndash;<color name="default_call_type_color">#000000</color>&ndash;&gt;
+    <color name="missed_call_color">#FF0000</color>
+    <color name="incoming_call_color">#0000FF</color>
+    <color name="outgoing_call_color">#00FF00</color>
+    <color name="default_background_color">#CCCCCC</color>
+    <color name="colorA">#FF0000</color>
+    <color name="colorB">#FFFF00</color>-->
+    <color name="colorC">#FF0000</color>
+    <color name="colorD">#FFFF00</color>
+    <color name="colorE">#FF0000</color>
+    <color name="colorF">#FFFF00</color>
+    <color name="colorG">#FF0000</color>
+    <color name="colorH">#FFFF00</color>
+    <color name="colorI">#FF0000</color>
+    <color name="colorJ">#FFFF00</color>
+    <color name="colorK">#FF0000</color>
+    <color name="colorL">#FFFF00</color>
+    <color name="colorM">#FF0000</color>
+    <color name="colorN">#FFFF00</color>
+    <color name="colorO">#FF0000</color>
+    <color name="colorP">#FFFF00</color>
+    <color name="colorQ">#FF0000</color>
+    <color name="colorR">#FFFF00</color>
+    <color name="colorS">#FF0000</color>
+    <color name="colorT">#FFFF00</color>
+    <color name="colorU">#FF0000</color>
+    <color name="colorV">#FFFF00</color>
+    <color name="colorW">#FF0000</color>
+    <color name="colorX">#FFFF00</color>
+    <color name="colorY">#FF0000</color>
+    <color name="colorZ">#FFFF00</color>
+
+    <!-- Add more colors for other letters if needed -->
+  <!--  <color name="default_call_type_color">#RRGGBB</color>
+-->
+    <integer-array name="initial_background_colors">
+        <!-- Colors for letters A to Z -->
+        <item>@color/colorA</item>
+        <item>@color/colorB</item>
+        <item>@color/colorC</item>
+        <item>@color/colorD</item>
+        <item>@color/colorE</item>
+        <item>@color/colorF</item>
+        <item>@color/colorG</item>
+        <item>@color/colorH</item>
+        <item>@color/colorI</item>
+        <item>@color/colorJ</item>
+        <item>@color/colorK</item>
+        <item>@color/colorL</item>
+        <item>@color/colorM</item>
+        <item>@color/colorN</item>
+        <item>@color/colorO</item>
+        <item>@color/colorP</item>
+        <item>@color/colorQ</item>
+        <item>@color/colorR</item>
+        <item>@color/colorS</item>
+        <item>@color/colorT</item>
+        <item>@color/colorU</item>
+        <item>@color/colorV</item>
+        <item>@color/colorW</item>
+        <item>@color/colorX</item>
+        <item>@color/colorY</item>
+        <item>@color/colorZ</item>
+
+    </integer-array>
+
+
+
+</resources>

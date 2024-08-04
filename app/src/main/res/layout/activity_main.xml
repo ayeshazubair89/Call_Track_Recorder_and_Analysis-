@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start" >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+
+        >
+
+        <TextView
+            android:id="@+id/filterIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Call Log Analytics"
+          android:textSize="20sp"
+            android:textStyle="bold"
+android:textColor="@color/light_purple"
+         />
+     <!-- <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/phone_purple"
+           android:layout_marginStart="130dp"
+          android:id="@+id/Icon2"
+            />-->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="140dp"
+            android:clickable="true"
+
+            android:onClick="showPopupMenu"
+            android:src="@drawable/baseline_expand_more"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            />
+
+        <!--  android:src="@drawable/baseline_filter_list"-->
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/gradient"
+            android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_backgroung_dark"
+        app:cardCornerRadius="12dp"
+        android:id="@+id/overall_cardview_dark"
+        app:cardElevation="6dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@drawable/rounded_backgroung_dark"
+            android:orientation="horizontal"
+
+            android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:orientation="vertical"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="10dp">
+            <!-- Label for Total Calls -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data-driven "
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="insights for calls."
+                android:textSize="21sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF">
+            </TextView>
+        </LinearLayout>
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieAnimationView"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:lottie_rawRes="@raw/analysis_anim"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Categories"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/dark_purple"
+            android:layout_gravity="center|start"
+            android:padding="10dp" />
+
+        <!--   <HorizontalScrollView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:paddingStart="5dp"
+               android:paddingEnd="5dp">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- All Calls Button -->
+            <Button
+                android:id="@+id/all"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:text="All"
+                android:textSize="10sp"
+                android:background="@drawable/rounded_backgroung_dark"
+                android:textColor="@android:color/white"
+                />
+
+            <!-- Incoming Calls Button -->
+            <Button
+                android:id="@+id/today"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="Today"
+                android:textSize="10sp"
+                android:background="@drawable/rounded_backgroung_dark"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:textColor="@android:color/white"
+                />
+
+
+
+            <!-- Outgoing Calls Button -->
+            <Button
+                android:id="@+id/yesterday"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:text="Yesterday"
+                android:background="@drawable/rounded_backgroung_dark"
+                android:textSize="11sp"
+                android:textColor="@android:color/white"
+                />
+
+            <!-- Missed Calls Button -->
+            <Button
+                android:id="@+id/week"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:text="7 Days"
+                android:background="@color/dark_purple"
+                android:textSize="11sp"
+                android:textColor="@android:color/white"
+                />
+          <!--  <Button
+                android:id="@+id/month"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:text="Month"
+                android:textSize="11sp"
+                android:textColor="@android:color/white"
+                />-->
+        </LinearLayout>
+        <!--  </HorizontalScrollView>-->
+    </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Overview"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/dark_purple"
+                android:layout_gravity="center|start"
+                android:padding="10dp" />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+           >
+            <ImageView
+
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:src="@drawable/img_6"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="250dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_background"
+                app:cardCornerRadius="12dp"
+                android:gravity="center"
+                android:id="@+id/overall_cardview"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+
+                    android:gravity="center"
+                    android:background="@color/light_purple"
+                   >
+
+                    <!-- Label for Total Calls -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Summary"
+                        android:textSize="21sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_purple"
+                        android:gravity="center"
+                       >
+                    </TextView>
+
+                    <!-- Value for Total Calls -->
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/hiddenLayout"
+                app:cardCornerRadius="12dp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:padding="10dp"
+                app:cardElevation="6dp">
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+
+                    android:background="@color/light_purple"
+                   >
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+
+                        android:background="@color/light_purple"
+                        android:orientation="vertical">
+                        <!--  <ProgressBar
+                              android:id="@+id/progressBar"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_centerInParent="true"
+                              android:visibility="visible"
+                          />-->
+
+                        <!-- Total Calls Section -->
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@color/light_purple"
+                            android:padding="10dp">
+
+                            <!-- Label for Total Calls -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Calls :"
+                                android:textSize="16sp"
+                                android:textColor="#000000">
+                            </TextView>
+
+                            <!-- Value for Total Calls -->
+                            <TextView
+                                android:id="@+id/totalCallsTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=""
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:gravity="end" />
+                        </LinearLayout>
+
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:padding="10dp">
+
+                            <!-- Label for Frequent Caller -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Frequent Caller :"
+                                android:textSize="16sp"
+                                android:textColor="#040404">
+                            </TextView>
+
+                            <!-- Value for Frequent Caller -->
+                            <TextView
+                                android:id="@+id/frequentCallerTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=""
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:gravity="end" />
+                        </LinearLayout>
+
+
+                        <!-- Total Missed Calls Section -->
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:padding="10dp">
+
+                            <!-- Label for Total Missed Calls -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Missed Calls :"
+                                android:textSize="16sp"
+                                android:textColor="#000000">
+                            </TextView>
+
+                            <!-- Value for Total Missed Calls -->
+                            <TextView
+                                android:id="@+id/totalMissedCallsTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=""
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:gravity="end" />
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:padding="10dp">
+
+                            <!-- Label for Total Outgoing Calls -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Outgoing Calls :"
+                                android:textSize="16sp"
+                                android:textColor="#000000">
+                            </TextView>
+
+                            <!-- Value for Total Outgoing Calls -->
+                            <TextView
+                                android:id="@+id/totalOutgoingCallsTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=""
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:gravity="end" />
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:padding="10dp">
+
+                            <!-- Label for Total Incoming Calls -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Incoming Calls :"
+                                android:textSize="16sp"
+                                android:textColor="#000000">
+                            </TextView>
+
+                            <!-- Value for Total Incoming Calls -->
+                            <TextView
+                                android:id="@+id/totalIncomingCallsTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=""
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:gravity="end" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:padding="10dp">
+
+                            <!-- Label for Total Rejected Calls -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Rejected Calls :"
+                                android:textSize="16sp"
+                                android:textColor="#000000">
+                            </TextView>
+
+                            <!-- Value for Total Rejected Calls -->
+                            <TextView
+                                android:id="@+id/totalRejectedCallsTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=""
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:gravity="end" />
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:padding="10dp">
+
+                            <!-- Label for Total Blocked Calls -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Blocked Calls :"
+                                android:textSize="16sp"
+                                android:textColor="#000000">
+                            </TextView>
+
+                            <!-- Value for Total Blocked Calls -->
+                            <TextView
+                                android:id="@+id/totalBlockedCallsTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=""
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:gravity="end" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:padding="10dp">
+
+                            <!-- Label for Longest Caller -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Longest Caller :"
+                                android:textSize="16sp"
+                                android:textColor="#000000">
+                            </TextView>
+
+                            <!-- Value for Longest Caller -->
+                            <TextView
+                                android:id="@+id/longestCallerTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=""
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:gravity="end" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:padding="10dp">
+
+                            <!-- Label for Total Duration -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Duration :"
+                                android:textSize="16sp"
+                                android:textColor="#000000">
+                            </TextView>
+
+                            <!-- Value for Total Duration -->
+                            <TextView
+                                android:id="@+id/totalDurationTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=""
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#040404"
+                                android:gravity="end" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!-- Content to be expanded -->
+                    <!-- You can add more details here -->
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+
+                >
+                <ImageView
+
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+                    android:src="@drawable/male"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="250dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_background"
+                    app:cardCornerRadius="12dp"
+                    android:gravity="center"
+                    android:id="@+id/overall_cardview2"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:background="@color/light_purple"
+                        android:layout_gravity="center"
+
+                        android:gravity="center"
+                        >
+
+                        <!-- Label for Total Calls -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Recap"
+                            android:textSize="21sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:textColor="@color/dark_purple">
+                        </TextView>
+
+                        <!-- Value for Total Calls -->
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:id="@+id/hiddenLayout2"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_background"
+                app:cardCornerRadius="12dp"
+                android:visibility="gone"
+                app:cardElevation="6dp">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/light_purple"
+               >
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_purple"
+                        android:id="@+id/recyclerView"
+                        />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:id="@+id/pie_qa"
+                android:background="@color/light_purple"
+                >
+                <ImageView
+
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+                    android:src="@drawable/pie"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="250dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_background"
+                    app:cardCornerRadius="12dp"
+                    android:gravity="center"
+
+
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:background="@color/light_purple"
+                        android:gravity="center"
+                      >
+
+                        <!-- Label for Total Calls -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chart"
+                            android:textSize="21sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:textColor="@color/dark_purple">
+                        </TextView>
+
+                        <!-- Value for Total Calls -->
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_background"
+                app:cardCornerRadius="12dp"
+android:layout_gravity="center"
+                android:visibility="gone"
+                android:id="@+id/ans_pie"
+                app:cardElevation="6dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+android:orientation="horizontal"
+                    android:padding="10dp">
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pieChart"
+                        android:layout_width="200dp"
+                        android:layout_marginTop="20dp"
+                      android:padding="20dp"
+                        android:layout_height="200dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                       >
+                        <ImageView
+
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+
+                            android:src="@drawable/outgoing"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            />
+                        <TextView
+                            android:id="@+id/totalOutgoingCallsTextViewPie"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text=""
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:gravity="end" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        >
+                        <ImageView
+
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+
+                            android:src="@drawable/baseline_call_received"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            />
+
+                    <TextView
+                        android:id="@+id/totalIncomingCallsTextViewPie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text=""
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="end" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        >
+                        <ImageView
+
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+
+                            android:src="@drawable/baseline_call_missed"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            />
+                    <TextView
+                        android:id="@+id/totalMissedCallsTextViewPie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text=""
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="end" />
+                    </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            >
+
+
+                                <ImageView
+
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+
+                                    android:src="@drawable/baseline_call_missed_outgoing"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="10dp"
+                                    />
+                    <TextView
+                        android:id="@+id/totalRejectedCallsTextViewPie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text=""
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="end" />
+                        </LinearLayout>
+                </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+          <!--  <androidx.appcompat.widget.Toolbar
+                              android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/light_purple"
+                >
+
+                <TextView
+                    android:id="@+id/Overall_analysis_by_linechart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Analysis by Line Chart"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#353535"
+                    />
+
+                &lt;!&ndash;  android:src="@drawable/baseline_filter_list"&ndash;&gt;
+            </androidx.appcompat.widget.Toolbar>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_background"
+                app:cardCornerRadius="12dp"
+
+                app:cardElevation="6dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+
+                    android:padding="10dp">
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_centerInParent="true"
+                        android:layout_below="@+id/some_other_view_id"
+                        android:layout_marginTop="16dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>-->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu_navigation" />
+
+
+</RelativeLayout>

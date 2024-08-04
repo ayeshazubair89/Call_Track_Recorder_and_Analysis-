@@ -1,0 +1,37 @@
+<!-- res/layout/custom_dialog_layout.xml -->
+
+<!--suppress ALL -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/rounded_rectangle_shape"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/callIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_call" />
+
+    <ImageView
+        android:id="@+id/deleteIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:src="@drawable/baseline_delete"
+        android:layout_toEndOf="@id/callIcon"
+       />
+<!--
+    <ImageView
+        android:id="@+id/closeIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:src="@drawable/baseline_close"
+        android:layout_below="@id/deleteIcon"
+        android:background="@drawable/rounded_button_call" />-->
+
+</RelativeLayout>
